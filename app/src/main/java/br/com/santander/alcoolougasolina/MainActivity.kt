@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
     }
     fun btnCalcular(view: View){
 
-        //para fazer o github
+        //para fazer o github dkfjsdfkasjdfk rwpeoriweopri
 
         /*capturar valores digitados - utilizando recursos do Java
         val precoAlcool = findViewById(R.id.editText_preco_alcool) as EditText
