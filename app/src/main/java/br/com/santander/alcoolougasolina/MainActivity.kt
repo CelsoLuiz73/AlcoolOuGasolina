@@ -3,35 +3,32 @@ package br.com.santander.alcoolougasolina
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.activity_main.view.*
+import br.com.santander.alcoolougasolina.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        binding.btnCalcular.setOnClickListener {
+            btnCalcular(it)
+        }
+
     }
-    fun btnCalcular(view: View){
 
-        //para fazer o github dkfjsdfkasjdfk rwpeoriweopri
-
-        /*capturar valores digitados - utilizando recursos do Java
-        val precoAlcool = findViewById(R.id.editText_preco_alcool) as EditText
-        val textoRecuperado = precoAlcool.text.toString()
-        Log.i("Resultado", " Texto recuperado: $textoRecuperado ")*/
-
-        val precoAlcool = editText_preco_alcool.text.toString()
-        val precoGasolina = editText_preco_gasolina.text.toString()
-
-        //mostra resultado de valores pegos no aplicativo
-        /*Log.i("Resultado", " Texto recuperado: $precoAlcool ")
-        Log.i("Resultado", " Texto recuperado: $precoGasolina ")*/
+    fun btnCalcular(view: View) {
+        val precoAlcool = binding.editTextPrecoAlcool.text.toString()
+        val precoGasolina = binding.editTextPrecoGasolina.text.toString()
 
         val validaCampos = validarCampos(precoAlcool, precoGasolina)
-        if (validaCampos){
+        if (validaCampos) {
             calcularMelhorPreco(precoAlcool, precoGasolina)
-        }else {
-            textView_resultado.setText("Preencha os preços primeiro")
+        } else {
+            binding.textViewResultado.text = "Preencha os preços primeiro"
         }
     }
 
@@ -54,10 +51,9 @@ class MainActivity : AppCompatActivity() {
 
         val resultadoPreco = valorAlcool / valorGasolina
         if (resultadoPreco >= 0.7){
-            textView_resultado.setText("Melhor utilizar Gasolina")
+            binding.textViewResultado.setText("Melhor utilizar Gasolina")
         } else {
-            textView_resultado.setText("Melhor utilizar Álcool")
+            binding.textViewResultado.setText("Melhor utilizar Álcool")
         }
-
     }
 }

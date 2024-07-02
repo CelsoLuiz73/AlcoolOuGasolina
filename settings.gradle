@@ -1,2 +1,4 @@
 rootProject.name = "AlcoolOuGasolina"
 include ':app'
+include ':AlcoolOuGasolina'
+

@@ -25,7 +25,7 @@
         android:layout_marginStart="45dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="45dp"
-        android:text="Saiba melhor opção para o abastecimento do seu carro"
+        android:text="@string/texto_principal"
         android:textAlignment="center"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -40,7 +40,7 @@
         android:layout_marginTop="28dp"
         android:layout_marginEnd="45dp"
         android:ems="10"
-        android:hint="Preço Álcool ex: 1.90"
+        android:hint="@string/preco_alcool"
         android:inputType="numberDecimal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -55,7 +55,7 @@
         android:layout_marginTop="24dp"
         android:layout_marginEnd="45dp"
         android:ems="10"
-        android:hint="Preço Gasolina ex: 2.90"
+        android:hint="@string/preco_gasolina"
         android:inputType="numberDecimal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -63,32 +63,30 @@
         app:layout_constraintTop_toBottomOf="@+id/editText_preco_alcool" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btn_calcular"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="44dp"
-        android:layout_marginTop="97dp"
+        android:layout_marginTop="52dp"
         android:layout_marginEnd="44dp"
-        android:layout_marginBottom="102dp"
         android:onClick="btnCalcular"
-        android:text="Calcular"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="@string/botao_calcular"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/editText_preco_gasolina"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/editText_preco_gasolina" />
 
     <TextView
         android:id="@+id/textView_resultado"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="71dp"
-        android:text="Nenhuma opção escolhida"
-        android:textSize="24sp"
+        android:layout_marginTop="50dp"
+        android:text="@string/texto_nenhuma_opcao"
+        android:textSize="@dimen/tamanho_texto"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_calcular" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
